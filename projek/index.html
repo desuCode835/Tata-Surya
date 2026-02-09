@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <div id="ui-layer">
+        <header>
+            <h1>Solar System 3D</h1>
+        </header>
+
+        <div id="controls">
+            <button id="toggle-animation" class="btn">Pause</button>
+            <div class="slider-container">
+                <label for="speed-slider">Speed</label>
+                <input type="range" id="speed-slider" min="0" max="2" step="0.1" value="1">
+            </div>
+            <div id="loading">Loading assets...</div>
+        </div>
+
+        <div id="info-panel" class="hidden">
+            <button id="close-info" class="close-btn">&times;</button>
+            <h2 id="planet-name">Planet Name</h2>
+            <div class="planet-stats">
+                <p><strong>Type:</strong> <span id="planet-type">-</span></p>
+                <p><strong>Radius:</strong> <span id="planet-radius">-</span> km</p>
+                <p><strong>Distance from Sun:</strong> <span id="planet-distance">-</span> million km</p>
+                <p><strong>Orbital Period:</strong> <span id="planet-period">-</span> days</p>
+            </div>
+            <p id="planet-description" class="description">Select a planet to see details.</p>
+        </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
